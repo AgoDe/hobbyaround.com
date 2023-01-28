@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Home', [
+            'name' => 'Agostino'
+        ]);
+});
+
+Route::get('/contatti', function () {
+    //sleep(2); // per poter aspettare qualche secondo prima del rendering
+    return Inertia::render('Contatti');
 });
