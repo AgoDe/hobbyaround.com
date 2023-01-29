@@ -21,6 +21,10 @@ Route::get('/', function () {
 });
 
 Route::get('/contatti', function () {
-    //sleep(2); // per poter aspettare qualche secondo prima del rendering
+    //sleep(1); // per poter aspettare qualche secondo prima del rendering
     return Inertia::render('Contatti');
+});
+
+Route::post('/logout', function () {
+   dd('logout');
 });

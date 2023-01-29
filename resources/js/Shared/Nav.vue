@@ -2,10 +2,15 @@
     <nav>
         <ul>
             <li>
-                <Link href="/">Home</Link>
+                <Link href="/" class="text-blue-600">Home</Link>
             </li>
             <li>
-                <Link href="/contatti">Contatti</Link>
+                <Link href="/contatti" class="">Contatti</Link>
+            </li>
+            <li>
+                <Link class=""
+                      href="/logout"
+                      method="post" as="button">Logout</Link>
             </li>
         </ul>
     </nav>
