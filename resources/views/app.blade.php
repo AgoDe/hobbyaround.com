@@ -14,6 +14,5 @@
 </head>
 <body class="antialiased">
 @inertia
-<div class="text-blue-600 text-4xl"> layout</div>
 </body>
 </html>

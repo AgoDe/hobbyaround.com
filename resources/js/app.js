@@ -13,5 +13,3 @@ createInertiaApp({
             .mount(el)
     },
 })
-
-InertiaProgress.init();

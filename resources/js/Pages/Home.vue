@@ -1,17 +1,22 @@
 <template>
-    <h1 class="text-3xl text-blue-600">
-        ciao {{ name }}
-    </h1>
 
-    <Nav/>
+    <layout>
+
+        <h1 class="text-4xl text-blue-600">
+            ciao {{ name }}
+        </h1>
+    </layout>
+
+
+
 
 </template>
 
 <script>
-import Nav from '../Shared/Nav.vue'
+import Layout from '../Shared/Layout.vue'
 export default {
     components: {
-        Nav,
+        Layout,
 
     },
     props: {

@@ -20,6 +20,10 @@ Route::get('/', function () {
         ]);
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About');
+});
+
 Route::get('/contatti', function () {
     //sleep(1); // per poter aspettare qualche secondo prima del rendering
     return Inertia::render('Contatti');

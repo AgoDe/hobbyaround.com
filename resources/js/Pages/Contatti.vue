@@ -1,5 +1,5 @@
 <template>
-    <h1>
+    <h1 class="text-4xl text-blue-500">
         Contatti
     </h1>
     <Nav/>
