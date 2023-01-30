@@ -36,13 +36,11 @@
 </template>
 
 <script>
-import {Link} from '@inertiajs/vue3'
 import NavLink from "./NavLink.vue";
 
 export default {
     name: "Nav",
     components: {
-        Link,
         NavLink,
     }
 }

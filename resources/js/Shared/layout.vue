@@ -1,7 +1,7 @@
 <template>
     <header class="flex justify-between">
 
-        <h3 class="text-blue-500 text-2xl text-bold">My app</h3>
+        <h3 class="text-blue-500 text-2xl text-bold">My app - {{ username }}</h3>
 
         <Nav class=""></Nav>
 
@@ -18,6 +18,11 @@ export default {
     name: "layout",
     components: {
         Nav
+    },
+    computed: {
+      username() {
+          return this.$page.auth.user.username;
+      }
     },
 }
 </script>
