@@ -1,20 +1,15 @@
 <template>
 
-    <layout>
 
         <h1 class="text-4xl text-blue-600">
             ciao {{ name }}
         </h1>
-    </layout>
-
-
-
-
 </template>
 
 <script>
 import Layout from '../Shared/Layout.vue'
 export default {
+    layout: Layout,
     components: {
         Layout,
 

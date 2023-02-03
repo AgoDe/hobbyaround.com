@@ -2,14 +2,14 @@
     <h1 class="text-4xl text-blue-500">
         Contatti
     </h1>
-    <Nav/>
 </template>
 
 <script>
-import Nav from "@/Shared/Nav.vue";
+import Layout from "@/Shared/layout.vue";
 
 export default {
-    components: {Nav},
+    layout: Layout,
+    components: {},
     props: {
         name: String,
     }
