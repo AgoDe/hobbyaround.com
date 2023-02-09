@@ -25,6 +25,13 @@
 
             </li>
             <li>
+                <NavLink href="/login"
+                         :active="$page.component === 'Login'"
+                >
+                    Login
+                </NavLink>
+            </li>
+            <li>
                 <Link class=""
                       href="/logout"
                       method="post" as="button" :data="{name: 'Agostino' }">Logout

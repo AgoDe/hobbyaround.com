@@ -15,8 +15,14 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+
+    $name = 'Mario';
+
+    if (auth()->check()) {
+        $name = auth()->user()->username;
+    }
     return Inertia::render('Home', [
-            'name' => 'Agostino'
+            'name' => $name,
         ]);
 });
 
@@ -27,6 +33,25 @@ Route::get('/about', function () {
 Route::get('/contatti', function () {
     //sleep(1); // per poter aspettare qualche secondo prima del rendering
     return Inertia::render('Contatti');
+});
+
+Route::get('/login', function () {
+    return Inertia::render('Login');
+});
+
+Route::post('/login', function () {
+    sleep(3);
+
+    $attributes = request()->validate([
+       'username' => 'required|max:255',
+       'password' => 'required'
+    ]);
+
+    auth()->attempt($attributes);
+
+    return redirect('/');
+
+
 });
 
 Route::post('/logout', function () {

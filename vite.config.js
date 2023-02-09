@@ -13,4 +13,9 @@ export default defineConfig({
         postcss,
 
     ],
+    server: {
+        watch: {
+            usePolling: true,
+        }
+    }
 });

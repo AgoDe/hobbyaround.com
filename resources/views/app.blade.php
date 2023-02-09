@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--    <script src="https://cdn.tailwindcss.com"></script>-->
-    <title>HobbyAround</title>
-
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
 

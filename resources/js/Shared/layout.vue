@@ -1,27 +1,30 @@
 <template>
-    <header class="flex justify-between">
+    <header class=" ">
+        <div class="container m-auto flex justify-between">
+            <h3 class="text-blue-500 text-2xl text-bold">HobbyAround</h3>
 
-        <h3 class="text-blue-500 text-2xl text-bold">My app - {{ username }}</h3>
-
-        <Nav class=""></Nav>
-
+            <Nav class=""></Nav>
+        </div>
     </header>
 
-    <slot/>
+    <div class="container m-auto mt-6">
+        <slot/>
+    </div>
 
 
 </template>
 
 <script>
-import Nav from './Nav.vue'
+import Nav from "./Nav.vue";
+
 export default {
-    name: "layout",
+
     components: {
         Nav
     },
     computed: {
       username() {
-          return this.$page.auth.user.username;
+          return this.$page.props.auth.user.username;
       }
     },
 }
@@ -29,4 +32,8 @@ export default {
 
 <style scoped>
 
+    header {
+        padding: 20px 0;
+        background: darkgrey;
+    }
 </style>
