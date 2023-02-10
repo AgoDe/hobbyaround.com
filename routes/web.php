@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,34 +28,16 @@ Route::get('/', function () {
         ]);
 });
 
+
 Route::get('/about', function () {
     return Inertia::render('About');
-});
+})->middleware('auth');
 
 Route::get('/contatti', function () {
     //sleep(1); // per poter aspettare qualche secondo prima del rendering
     return Inertia::render('Contatti');
 });
 
-Route::get('/login', function () {
-    return Inertia::render('Login');
-});
-
-Route::post('/login', function () {
-    sleep(3);
-
-    $attributes = request()->validate([
-       'username' => 'required|max:255',
-       'password' => 'required'
-    ]);
-
-    auth()->attempt($attributes);
-
-    return redirect('/');
-
-
-});
-
-Route::post('/logout', function () {
-   dd('logout');
-});
+Route::get('/login',[LoginController::class, 'create'])->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class, 'store'])->name('login.store')->middleware('guest');
+Route::post('/logout',[LoginController::class, 'destroy'])->name('logout')->middleware('auth');

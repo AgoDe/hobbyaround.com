@@ -1,7 +1,7 @@
 <template>
     <header class=" ">
         <div class="container m-auto flex justify-between">
-            <h3 class="text-blue-500 text-2xl text-bold">HobbyAround</h3>
+            <h3 class="text-blue-500 text-2xl text-bold">HobbyAround, {{username}} </h3>
 
             <Nav class=""></Nav>
         </div>
@@ -24,7 +24,7 @@ export default {
     },
     computed: {
       username() {
-          return this.$page.props.auth.user.username;
+          return 'Ciao ' + this.$page.props.auth.user.username;
       }
     },
 }

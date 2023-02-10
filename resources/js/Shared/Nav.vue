@@ -24,17 +24,19 @@
                 </Link>
 
             </li>
-            <li>
+            <li v-if="!$page.props.auth.check">
                 <NavLink href="/login"
                          :active="$page.component === 'Login'"
                 >
                     Login
                 </NavLink>
             </li>
-            <li>
+            <li v-if="$page.props.auth.check">
                 <Link class=""
                       href="/logout"
-                      method="post" as="button" :data="{name: 'Agostino' }">Logout
+                      method="post"
+                >
+                    Logout
                 </Link>
 <!--                 in un link, si usa l'attributo preserve-scroll  per mantenere la posizione dello scroll al refresh (da usare tipo quando si applicano dei filtri  -->
             </li>
