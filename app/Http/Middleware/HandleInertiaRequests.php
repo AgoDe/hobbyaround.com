@@ -41,9 +41,9 @@ class HandleInertiaRequests extends Middleware
             // qua inserisco tutte le variabili da condividere
             'auth' => [
                 'check' => Auth::check(),
-                'user' => [
-                    'username' => Auth::user() ? Auth::user()->username : null,
-                ]
+                'user' => Auth::user() ? [
+                    'username' => Auth::user()->username,
+                ] : null
             ],
         ]);
     }

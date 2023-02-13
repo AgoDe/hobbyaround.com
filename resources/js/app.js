@@ -1,7 +1,8 @@
 import { createApp, h } from 'vue'
 import {createInertiaApp, Link} from '@inertiajs/vue3'
 import '../css/app.css';
-import Layout from "./Shared/layout.vue";
+import 'flowbite';
+import Layout from "./Pages/Shared/Layout.vue";
 
 createInertiaApp({
     resolve: name => {
