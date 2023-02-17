@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\SessionController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,20 @@ Route::get('/contatti', function () {
     return Inertia::render('Contatti');
 });
 
-Route::get('/login',[LoginController::class, 'create'])->name('login')->middleware('guest');
-Route::post('/login',[LoginController::class, 'store'])->name('login.store')->middleware('guest');
-Route::post('/logout',[LoginController::class, 'destroy'])->name('logout')->middleware('auth');
+
+Route::middleware('guest')->group(function () {
+
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+
+    Route::get('/login',[SessionController::class, 'create'])->name('login');
+    Route::post('/login',[SessionController::class, 'store'])->name('login.store');
+
+});
+
+Route::middleware('auth')->group(function () {
+
+    Route::post('/logout',[SessionController::class, 'destroy'])->name('logout')->middleware('auth');
+
+});
+

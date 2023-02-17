@@ -2,7 +2,7 @@
 
     <layout>
 
-        <Head title="Login" />
+        <Head title="Registrazione" />
 
 
         <main class="grid place-items-center">
@@ -10,7 +10,7 @@
             <section class="bg-white py-8 px-14 lg:w-1/3 rounded-xl max-e-md mx-auto">
 
                 <h1 class="text-3xl text-center mb-4">
-                    Login
+                    Registrazione
                 </h1>
 
                 <form class="text-center" method="post" @submit.prevent="submit">
@@ -63,6 +63,13 @@
                         Accedi
                     </button>
                 </form>
+
+
+                <div class="mt-6 text-center">
+                    Hai già un account?
+                    <Link href="/login" class="route_link">Accedi</Link>
+                </div>
+
 
             </section>
 

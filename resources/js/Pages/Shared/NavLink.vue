@@ -19,8 +19,7 @@ export default {
 
 <style scoped>
     .active {
-        color: #3f4257!important;
-        text-decoration: underline;
+        color:#ff5e3a !important;
     }
 
 </style>
