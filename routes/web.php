@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 use App\Http\Controllers\Auth\SessionController;
 use App\Http\Controllers\RegisterController;
+use \App\Http\Controllers\CommentController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +42,9 @@ Route::get('/contatti', function () {
     return Inertia::render('Contatti');
 });
 
+Route::get('/articoli', [SiteController::class, 'articles']);
+Route::get('/articoli/{article}', [SiteController::class, 'article']);
+
 
 Route::middleware('guest')->group(function () {
 
@@ -53,6 +59,10 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
 
     Route::post('/logout',[SessionController::class, 'destroy'])->name('logout')->middleware('auth');
+    Route::resources([
+        'comments' => CommentController::class,
+        'articles' => ArticleController::class,
+    ]);
 
 });
 

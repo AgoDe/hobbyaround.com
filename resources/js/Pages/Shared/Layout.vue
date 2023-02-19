@@ -9,18 +9,15 @@
 </template>
 
 <script>
-import Nav from "./Nav.vue";
-import Header from "./Header.vue"
+import Header from './Header.vue'
 
 export default {
 
     components: {
-        Nav,
         Header,
     },
     computed: {
       username() {
-
           return this.$page.props.auth.user.username ? 'Ciao ' + this.$page.props.auth.user.username: '';
       }
     },

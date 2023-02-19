@@ -64,7 +64,6 @@
                     </button>
                 </form>
 
-
                 <div class="mt-6 text-center">
                     Non hai un account?
                     <Link href="/register" class="route_link">Registrati</Link>

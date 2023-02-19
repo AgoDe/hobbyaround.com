@@ -3,7 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Article;
+use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,12 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(100)->create();
+        //User::factory(100)->create();
 
-         \App\Models\User::factory()->create([
+         /*User::factory()->create([
              'username' => 'test',
              'email' => 'test@gmail.com',
              'password' => 'asdasd',
-         ]);
+         ]);*/
+
+         //Article::factory(100)->create();
+         Comment::factory(100)->create();
+
     }
 }

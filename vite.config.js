@@ -5,7 +5,13 @@ import {postcss} from "autoprefixer";
 
 export default defineConfig({
     plugins: [
-        vue(),
+        vue({
+            template: {
+                compilerOptions:{
+                    isCustomElement: (tag) => ['layout', 'Head'].includes(tag)
+                }
+            }
+        }),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
