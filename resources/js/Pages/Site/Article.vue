@@ -149,26 +149,38 @@ let back = () => { window.history.back() };
     }
 
     .comment_action_box {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         position: absolute;
         right: 0;
-        width: 80px;
-        background-color: transparent;
+        width: 0;
         height: 100%;
         color: #3f4257;
         flex-direction: column;
-
+        transition: 0.5s ease;
+        opacity: 0.2;
 
     }
 
     .comment_action_box button{
         width: 25px;
+        visibility: hidden;
+        transition: 230ms ease;
+
     }
 
     .comment_container:hover .comment_action_box {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        transition: 0.5s ease;
+        width: 70px;
+        opacity: 1;
+    }
+
+    .comment_container:hover .comment_action_box button{
+        visibility: visible;
+
 
     }
+
+
 </style>
